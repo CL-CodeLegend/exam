@@ -39,6 +39,7 @@ var question_upload_img = {
 			});
 		},
 		prepareUploadify : function prepareUploadify(){
+			console.log("12345678/9");
 			$("#uploadify").uploadify({
 				
 				'debug'	 : false,

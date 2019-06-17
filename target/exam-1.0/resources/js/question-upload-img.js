@@ -39,6 +39,7 @@ var question_upload_img = {
 			});
 		},
 		prepareUploadify : function prepareUploadify(){
+			console.log("12345678/9");
 			$("#uploadify").uploadify({
 				
 				'debug'	 : false,
@@ -59,8 +60,8 @@ var question_upload_img = {
 //					$('#loader').show();
 				},
 				onUploadComplete: function(file) {
-//					$('#div-file-list').html('<a id=\'file-name\'>' + file.name + '</a>');
-//					$('#loader').fadeOut(100);
+					// $('#div-file-list').html('<a id=\'file-name\'>' + file.name + '</a>');
+					// $('#loader').fadeOut(100);
 					$('#maincontent').load(location.href+' #maincontent > *');
 					$(".fade").modal('hide');
 				},
