@@ -23,9 +23,9 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/db_exam?useUnicode=true&amp;characterEncoding=UTF-8" />
-		<property name="user" value="root" />
-		<property name="password" value="123456789" />
+			value="jdbc:mysql://rm-uf6n8p5878apa7fargo.mysql.rds.aliyuncs.com:3306/db_exam?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root_exam" />
+		<property name="password" value="Abc123456" />
 		
 		<property name="maxPoolSize" value="50"></property>
 		<property name="minPoolSize" value="10"></property>
