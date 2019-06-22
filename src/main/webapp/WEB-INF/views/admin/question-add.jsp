@@ -204,14 +204,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 									<span class="form-message"></span>
 								</div>
-								
+								<%-- 试题题目 --%>
 								<div class="form-line question-content">
 									<span class="form-label"><span class="warning-label">*</span>试题内容：</span>
 									<textarea class="add-question-ta"></textarea>									
 									<span class="add-img add-content-img" style="width:100px;">添加图片</span>
 									<span class="form-message"></span>
-									<input type="file" name="titleImg" id="title_imgupload">
+									<input type="file" name="titleImg" class="file-content-img" id="title_imgupload">
+									<button type="button" id="titleImg_btn">upload</button>
+									<a href="" class="diaplay-img display-content-img" target="_blank" data-url="">预览图片</a>
 								</div>
+
+
+
+
 								<div class="form-line form-question-opt" style="display: block;">
 									<span class="form-label"><span class="warning-label">*</span>选项：</span>
 									<div class="add-opt-items">
@@ -375,6 +381,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<!-- Bootstrap JS -->
 		<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
-		
+
+	<script>
+		$(document).ready(function(){
+			$("#titleImg_btn").click(function () {
+				// alert("upload img");
+				// alert($('#title_imgupload').val());
+				// var localImg_path = $('#title_imgupload').val();
+				var reader = new FileReader();
+				var AllowImgFileSize = 2100000; //上传图片最大值(单位字节)（ 2 M = 2097152 B ）超过2M上传失败
+				var file = $("#title_imgupload")[0].files[0];
+				var imgUrlBase64;
+				if (file) {
+					//将文件以Data URL形式读入页面
+					imgUrlBase64 = reader.readAsDataURL(file);
+					reader.onload = function (e) {
+						//var ImgFileSize = reader.result.substring(reader.result.indexOf(",") + 1).length;//截取base64码部分（可选可不选，需要与后台沟通）
+						if (AllowImgFileSize != 0 && AllowImgFileSize < reader.result.length) {
+							alert( '上传失败，请上传不大于2M的图片！');
+							return;
+						}else{
+							//执行上传操作
+							// alert(reader.result);
+							$.ajax({
+								url: "/admin/upload-img",
+								type: "post",
+								data: {'image' : reader.result},
+								success: function(data){
+									// alert("resources/images/upload/"+data);
+									$('.display-content-img').attr('href',"resources/images/upload/"+data);
+									$('.display-content-img').attr('data-url',"resources/images/upload/"+data);
+								}
+							});
+						}
+					}
+				}
+
+
+			});
+		});
+
+	</script>
 	</body>
 </html>

@@ -39,6 +39,11 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml /WEB-INF/spring/security.xml /WEB-INF/spring/scheduler.xml</param-value>
 	</context-param>
+    <context-param>
+        <param-name>UPLOAD_IMAGE_PATH</param-name>
+        <param-value>../images/resources/upload/</param-value>
+    </context-param>
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

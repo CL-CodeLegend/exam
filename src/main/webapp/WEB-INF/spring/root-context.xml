@@ -21,9 +21,9 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		
+		<!--rm-uf6n8p5878apa7fargo.mysql.rds.aliyuncs.com-->
 		<property name="jdbcUrl"
-			value="jdbc:mysql://rm-uf6n8p5878apa7fargo.mysql.rds.aliyuncs.com:3306/db_exam?useUnicode=true&amp;characterEncoding=UTF-8" />
+			value="jdbc:mysql://rm-uf6n8p5878apa7fargo.mysql.rds.aliyuncs.com:3306/db_exam?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false" />
 		<property name="user" value="root_exam" />
 		<property name="password" value="Abc123456" />
 		
