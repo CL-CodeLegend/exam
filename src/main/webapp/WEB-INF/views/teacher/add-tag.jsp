@@ -14,7 +14,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     	<base href="<%=basePath%>">
-    
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>试题管理</title>
@@ -170,7 +169,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="col-md-12">
 						<div class="copy">
 							<p>
-								Exam++ Copyright © <a href="http://www.exam.wangcl.xyz/" target="_blank">Exam++</a> - <a href="." target="_blank">主页</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">关于我们</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">FAQ</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">联系我们</a>
+								Exam Copyright © <a href="http://www.exam.wangcl.xyz/" target="_blank">Exam</a> - <a href="." target="_blank">主页</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">关于我们</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">FAQ</a> | <a href="http://www.exam.wangcl.xyz/" target="_blank">联系我们</a>
 							</p>
 						</div>
 					</div>

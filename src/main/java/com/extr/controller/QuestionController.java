@@ -6,6 +6,7 @@ import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -265,7 +266,12 @@ public class QuestionController {
         }
         QuestionAdapter adapter = new QuestionAdapter(question, null, questionMap.get(questionId), strUrl);
         String strHtml = adapter.getStringFromXML(true, false, true);
+        String summary = question.getContent();
+        summary = StringUtils.substringAfter(summary,"<title>");
+        summary = StringUtils.substringBefore(summary,"</title>");
         model.addAttribute("strHtml", strHtml);
+        model.addAttribute("keywords",question.getKeyword());
+        model.addAttribute("summary",summary);
         model.addAttribute("question", question);
         return "admin/question-preview";
     }
